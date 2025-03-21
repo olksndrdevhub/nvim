@@ -83,14 +83,14 @@ return {
           },
         },
       })
-      require("neomodern").load()
+      -- require("neomodern").load()
     end,
   },
   {
     "rose-pine/neovim",
     name = "rose-pine",
     opts = {
-      variant = "main", -- auto, main, moon, or dawn
+      variant = "main",      -- auto, main, moon, or dawn
       dark_variant = "main", -- main, moon, or dawn
       dim_inactive_windows = false,
       extend_background_behind_borders = true,
@@ -98,13 +98,13 @@ return {
       enable = {
         terminal = true,
         legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-        migrations = true, -- Handle deprecated options automatically
+        migrations = true,        -- Handle deprecated options automatically
       },
 
       styles = {
         bold = true,
         italic = true,
-        transparency = true,
+        transparency = false,
       },
       groups = {
         border = "muted",
@@ -156,11 +156,10 @@ return {
     },
   },
 
-  -- Configure LazyVim to load theme
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "neomodern",
-  --   },
-  -- },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "rose-pine",
+    },
+  },
 }

@@ -5,3 +5,16 @@
 -- or basedpyright
 vim.g.lazyvim_python_lsp = "pyright"
 -- vim.g.lazyvim_python_ruff = "ruff"
+
+-- vim.g.clipboard = {
+--   name = "WslClipboard",
+--   copy = {
+--     ["+"] = "clip.exe",
+--     ["*"] = "clip.exe",
+--   },
+--   paste = {
+--     ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+--     ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+--   },
+--   cache_enabled = true,
+-- }

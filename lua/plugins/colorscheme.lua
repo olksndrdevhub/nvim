@@ -1,7 +1,7 @@
 return {
   {
     "catppuccin/nvim",
-    lazy = true,
+    priority = 1000,
     name = "catppuccin",
     opts = {
       integrations = {
@@ -42,10 +42,12 @@ return {
     },
   },
   {
-    "tokyonight.nvim",
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
     opts = {
       style = "moon",
-      transparent = true,
+      -- transparent = true,
       terminal_colors = true,
       styles = {
         sidebars = "transparent",
@@ -58,7 +60,16 @@ return {
     config = function()
       require("vague").setup({
         -- optional configuration here
+        transparent = true,
       })
+    end,
+  },
+  {
+    "forest-nvim/sequoia.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme sequoia-main") -- or 'sequoia-night' / 'sequoia-main' / 'sequoia-insomnia'
     end,
   },
   {
@@ -69,7 +80,7 @@ return {
       require("neomodern").setup({
         -- MAIN OPTIONS --
         -- Choose between 'iceclimber', 'coffeecat', 'darkforest', 'roseprime', 'daylight'
-        theme = "iceclimber",
+        theme = "roseprime",
         plain_float = true,
         transparent = true,
         plugin = {
@@ -90,21 +101,21 @@ return {
     "rose-pine/neovim",
     name = "rose-pine",
     opts = {
-      variant = "main",      -- auto, main, moon, or dawn
+      variant = "moon", -- auto, main, moon, or dawn
       dark_variant = "main", -- main, moon, or dawn
-      dim_inactive_windows = false,
+      dim_inactive_windows = true,
       extend_background_behind_borders = true,
 
       enable = {
         terminal = true,
         legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-        migrations = true,        -- Handle deprecated options automatically
+        migrations = true, -- Handle deprecated options automatically
       },
 
       styles = {
         bold = true,
         italic = true,
-        transparency = false,
+        transparency = true,
       },
       groups = {
         border = "muted",
@@ -159,7 +170,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      -- colorscheme = "tokyonight",
     },
   },
 }

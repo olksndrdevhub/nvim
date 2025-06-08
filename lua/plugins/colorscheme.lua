@@ -214,14 +214,14 @@ return {
         -- Improve start up time by caching highlights. Generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
         cache = true,
       })
-      vim.cmd("colorscheme cyberdream")
+      -- vim.cmd("colorscheme cyberdream")
     end,
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "tokyonight",
+      colorscheme = "tokyonight",
     },
   },
 }
